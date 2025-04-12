@@ -3,282 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindPath Studio 思路啟行</title>
+  <title>MindPath Studio 思路啟行 - 首頁</title>
   <style>
-    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      color: #333;
-      background: #fff;
-      overflow-x: hidden;
-    }
-    a { text-decoration: none; color: inherit; }
-
-    /* 固定導航 */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(17, 17, 17, 0.9);
-      z-index: 999;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header .logo {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: #fff;
-    }
-    nav {
-      display: flex;
-      gap: 1.5rem;
-    }
-    nav a {
-      font-size: 1rem;
-      color: #fff;
-      transition: color 0.3s;
-    }
-    nav a:hover { color: #f00; }
-
-    /* Hero 區塊 */
+    html, body { height: 100%; }
+    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; overflow: hidden; }
     .hero {
-      height: 100vh;
-      width: 100%;
-      background: url('images/MINDPATH 11.jpg') center/cover no-repeat;
       position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
+      width: 100%;
+      height: 100%;
+      background: url('images/MINDPATH 11.jpg') center/cover no-repeat;
     }
     .hero::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0,0,0,0.3);
     }
-    .hero-content {
-      position: relative;
+    .nav {
+      position: absolute;
+      top: 20px;
+      right: 30px;
       z-index: 2;
-      max-width: 800px;
-      color: #fff;
-      padding: 0 1rem;
-    }
-    .hero-content h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    .hero-content p {
-      font-size: 1.3rem;
-    }
-
-    /* Section 共用 */
-    section {
-      padding: 8rem 2rem 4rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-      color: #111;
-    }
-    section p {
-      text-align: center;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 800px;
-      margin: 0.5rem auto 2rem;
-    }
-
-    /* 服務區塊（使用 Tab 切換） */
-    .service-tabs {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 3rem;
+      gap: 20px;
     }
-    .service-tab {
-      padding: 0.8rem 1.5rem;
-      background: #eee;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: background 0.3s, color 0.3s;
-    }
-    .service-tab.active {
-      background: #f00;
+    .nav a {
       color: #fff;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 10px 15px;
+      background: rgba(0,0,0,0.5);
+      border-radius: 4px;
+      transition: background 0.3s;
     }
-    .service-content {
-      display: none;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-    .service-content.active { display: block; }
-    .service-content h3 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .service-content p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-    .service-content img {
-      width: 100%;
-      max-width: 800px;
-      height: auto;
-      margin: 1rem auto;
-      display: block;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-
-    /* 聯絡我們 */
-    .contact {
-      background: #f9f9f9;
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    .contact h2 { margin-bottom: 1.5rem; }
-    .contact p { font-size: 1.1rem; margin-bottom: 1rem; }
-
-    /* Footer */
-    footer {
-      background: #111;
-      padding: 2rem;
-      text-align: center;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
-
-    /* 回到頂部按鈕 */
-    #backToTop {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: #f00;
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      z-index: 999;
+    .nav a:hover {
+      background: rgba(255,0,0,0.8);
     }
   </style>
 </head>
 <body>
-  <!-- Fixed Header -->
-  <header>
-    <div class="logo">MindPath Studio</div>
-    <nav>
-      <a href="#hero">首頁</a>
-      <a href="#about">關於我們</a>
-      <a href="#services">服務項目</a>
-      <a href="#contact">聯絡我們</a>
-    </nav>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>創意策略 × 在地推廣</h1>
-      <p>我們幫助香港品牌走進內地市場，也讓內地用戶認識你</p>
+  <div class="hero">
+    <div class="nav">
+      <a href="about.html">關於我們</a>
+      <a href="services.html">服務項目</a>
+      <a href="contact.html">聯絡我們</a>
     </div>
-  </section>
-
-  <!-- 關於我們 -->
-  <section id="about">
-    <h2>關於我們</h2>
-    <p>思路啟行工作室專注於協助香港品牌拓展中國內地市場，並利用創意內容及數位行銷工具（如 Instagram、Facebook、Google、YouTube、小紅書）為品牌打造獨特形象。</p>
-  </section>
-
-  <!-- 服務項目 -->
-  <section id="services">
-    <h2>服務項目</h2>
-    <div class="service-tabs">
-      <div class="service-tab active" data-tab="facebook">Facebook</div>
-      <div class="service-tab" data-tab="instagram">Instagram</div>
-      <div class="service-tab" data-tab="youtube">YouTube</div>
-      <div class="service-tab" data-tab="xiaohongshu">小紅書</div>
-    </div>
-    <!-- Facebook 服務 -->
-    <div class="service-content active" id="facebook">
-      <h3>Facebook 服務</h3>
-      <p>我們提供 Facebook 付費廣告投放、直播推流、KOL 宣傳及細緻的數據分析，全面提升品牌在香港及內地市場的曝光與互動。</p>
-      <img src="https://via.placeholder.com/800x400?text=Facebook+服務" alt="Facebook 服務示意圖">
-    </div>
-    <!-- Instagram 服務 -->
-    <div class="service-content" id="instagram">
-      <h3>Instagram 服務</h3>
-      <p>結合精美圖片與創意短片，我們協助品牌打造獨特視覺故事，透過付費廣告與網紅合作，吸引更多粉絲關注。</p>
-      <img src="https://via.placeholder.com/800x400?text=Instagram+服務" alt="Instagram 服務示意圖">
-    </div>
-    <!-- YouTube 服務 -->
-    <div class="service-content" id="youtube">
-      <h3>YouTube 服務</h3>
-      <p>提供品牌故事製作、視頻內容優化及整合營銷策略，並配合 YouTube 廣告投放與直播活動，吸引精準用戶關注。</p>
-      <img src="https://via.placeholder.com/800x400?text=YouTube+服務" alt="YouTube 服務示意圖">
-    </div>
-    <!-- 小紅書 服務 -->
-    <div class="service-content" id="xiaohongshu">
-      <h3>小紅書 服務</h3>
-      <p>透過高質感內容輸出和 KOL 合作，我們協助品牌在中港年輕用戶中樹立信任形象並提升市場佔有率。</p>
-      <img src="https://via.placeholder.com/800x400?text=小紅書+服務" alt="小紅書 服務示意圖">
-    </div>
-  </section>
-
-  <!-- 聯絡我們 -->
-  <section id="contact" class="contact">
-    <h2>聯絡我們</h2>
-    <p>Email: mindpath.co@gmail.com</p>
-    <p>電話：+852 6631 9960 / +86 158 1385 8552</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 MindPath Studio 思路啟行 | All Rights Reserved</p>
-  </footer>
-
-  <!-- 回到頂部按鈕 -->
-  <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</button>
-
-  <script>
-    // 切換服務內容
-    const tabs = document.querySelectorAll('.service-tab');
-    const contents = document.querySelectorAll('.service-content');
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-        // 清除其他 Tab 和內容的 active 狀態
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
-        // 設定目前的 active 狀態
-        tab.classList.add('active');
-        document.getElementById(target).classList.add('active');
-      });
-    });
-
-    // 回到頂部按鈕顯示/隱藏
-    window.addEventListener('scroll', () => {
-      const btn = document.getElementById('backToTop');
-      if(window.scrollY > 300){
-        btn.style.display = 'flex';
-      } else {
-        btn.style.display = 'none';
-      }
-    });
-  </script>
+  </div>
 </body>
 </html>
