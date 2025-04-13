@@ -2,42 +2,119 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindPath Studio 思路啟行 - 聯絡我們</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>聯絡我們 | MindPath Studio</title>
+  <!-- 延續前面引用的字體 (Playfair Display + Rubik) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Rubik', 'Microsoft JhengHei', sans-serif;
+      color: #fff; /* 圖片偏暗時，文字用白色較清晰 */
+      background: #000; /* 保底背景色 */
     }
-    header a { color: #fff; text-decoration: none; margin-right: 15px; }
-    .content { max-width: 800px; margin: 4rem auto; padding: 0 1rem; text-align: center; }
-    h1 { margin-bottom: 2rem; }
-    p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; }
-    .back { margin-top: 2rem; }
-    .back a { color: #f00; }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 20px 40px;
+      text-align: right;
+      z-index: 1000;
+    }
+    header a {
+      color: #fff;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: opacity 0.3s;
+    }
+    header a:hover {
+      opacity: 0.7;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 70px);
+      background: url('images/contact-bg.jpg') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 1;
+    }
+    .content-wrap {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+    .content-wrap h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      margin-bottom: 40px;
+    }
+    /* LOGO 調大設定 */
+    .logo {
+      width: 180px;
+      height: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    /* 電郵與電話資訊樣式，保持一致字體與間距 */
+    .contact-info {
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    /* 二維碼圖片 */
+    .qrcode {
+      width: 160px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      .hero {
+        height: calc(100vh - 60px);
+      }
+      .content-wrap h1 {
+        font-size: 36px;
+      }
+      .logo {
+        width: 140px;
+      }
+      .qrcode {
+        width: 120px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">MindPath Studio</div>
-    <nav>
-      <a href="index.html">首頁</a>
-      <a href="about.html">關於我們</a>
-      <a href="services.html">服務項目</a>
-    </nav>
+    <a href="index.html">首頁</a>
+    <a href="about.html">關於我們</a>
+    <a href="services.html">服務項目</a>
+    <a href="contact.html">聯絡我們</a>
   </header>
-  <div class="content">
-    <h1>聯絡我們</h1>
-    <p>Email: mindpath.co@gmail.com</p>
-    <p>電話：+852 6631 9960 / +86 158 1385 8552</p>
-    <p>歡迎透過以上方式聯絡我們，我們期待與您的合作！</p>
-    <div class="back"><a href="index.html">返回首頁</a></div>
-  </div>
+  <section class="hero">
+    <div class="content-wrap">
+      <h1>Contact Us</h1>
+      <img class="logo" src="images/mindpath-logo.png" alt="MindPath Studio Logo">
+      <div class="contact-info">
+        <p>Email: mindpath.co@gmail.com</p>
+        <p>電話: +852 6631 9960 / +86 158 1385 8552</p>
+      </div>
+      <img class="qrcode" src="images/qrcode.png" alt="QR Code">
+    </div>
+  </section>
 </body>
 </html>
+
