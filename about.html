@@ -14,23 +14,34 @@
       color: #333;
     }
     header {
-      position: sticky;
-      top: 0;
       background-color: #000;
       padding: 20px 40px;
-      text-align: right;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       z-index: 1000;
     }
-    header a {
+    /* Header 分成兩行，第一行為 LOGO 置中並放大 */
+    .header-logo {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .header-logo img {
+      width: 250px; /* LOGO 放大後的寬度，可根據需要微調 */
+      height: auto;
+    }
+    /* 第二行為居中的導覽選單 */
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+    nav a {
       color: white;
-      margin-left: 25px;
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
+      margin: 0 15px;
       transition: opacity 0.3s;
     }
-    header a:hover {
+    nav a:hover {
       opacity: 0.7;
     }
     .container {
@@ -94,10 +105,15 @@
 </head>
 <body>
   <header>
-    <a href="index.html">首頁</a>
-    <a href="about.html">關於我們</a>
-    <a href="services.html">服務項目</a>
-    <a href="contact.html">聯絡我們</a>
+    <div class="header-logo">
+      <img src="images/mindpath-logo.png" alt="MindPath Studio LOGO">
+    </div>
+    <nav>
+      <a href="index.html">首頁</a>
+      <a href="about.html">關於我們</a>
+      <a href="services.html">服務項目</a>
+      <a href="contact.html">聯絡我們</a>
+    </nav>
   </header>
   <div class="container">
     <h1>關於我們</h1>
@@ -105,19 +121,14 @@
       <img src="images/tommy.jpg" alt="創辦人湯國豪先生">
       <div class="interview-text">
         <h2>訪談對談 | 創辦人湯國豪先生（Tommy Tong）</h2>
-
         <div class="question">Q：MindPath Studio 的成立背景是什麼？</div>
         <p>MindPath Studio 成立於2025年，由市場策劃及媒體營運顧問湯國豪先生創立。多年服務本地及跨境品牌後，我們深刻體會到傳統行銷方式在數位轉型浪潮中已漸顯疲態，許多企業面對內容過剩、平台變化快、缺乏差異化策略等挑戰，無從突圍。MindPath Studio 正是為了回應這些市場痛點而誕生。</p>
-
         <div class="question">Q：創辦人是如何看待當下的市場行銷環境？</div>
         <p>湯國豪先生認為：「市場早已不再只是曝光與堆砌預算的比賽，而是要洞察人心、快速應變、內容為核。」他強調品牌要有『可行動的創意』與『數據支持的策略』才能在新媒體環境中脫穎而出。這也是 MindPath Studio 所堅持的核心理念。</p>
-
         <div class="question">Q：MindPath Studio 在策略上有何不同？</div>
         <p>我們主張“策略先於內容”，並強調「在地化視角 + 數據導向 + 整合創意」。從平台選擇、內容調性到推廣節奏，我們結合本地洞察與內地市場趨勢，量身打造品牌成長路徑。我們的服務不只限於代運營，更涵蓋品牌聲音重塑與用戶關係經營。</p>
-
         <div class="question">Q：對未來有什麼展望？</div>
         <p>MindPath Studio 致力於成為香港商家進軍內地市場的橋樑與策略夥伴。我們希望三年內協助超過100家本地企業完成數碼轉型，並建立一套實戰驗證的營運方法論，讓「策略即實踐」不再只是口號。湯先生亦表示：「我們希望不只是執行者，更是企業創新思維的引導者。」</p>
-
         <div class="question">Q：創辦人個人的價值觀是什麼？</div>
         <p>湯國豪先生始終相信：「敏銳比經驗重要，執行力比構想重要。」這種強調即時反應與精準落地的行事風格，已深深烙印在 MindPath Studio 的團隊文化中。我們堅持持續學習、挑戰框架、重新定義「有效內容」與「真實價值」的標準。</p>
       </div>
