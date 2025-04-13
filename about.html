@@ -2,41 +2,126 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>MindPath Studio 思路啟行 - 關於我們</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>關於我們 | MindPath Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; background: #fff; color: #333; }
-    header {
-      background: #111;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Rubik', 'Microsoft JhengHei', sans-serif;
+      background-color: #fdfdfd;
+      color: #333;
     }
-    header a { color: #fff; text-decoration: none; margin-right: 15px; }
-    .content { max-width: 800px; margin: 4rem auto; padding: 0 1rem; }
-    h1 { text-align: center; margin-bottom: 2rem; }
-    p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; }
-    .back { margin-top: 2rem; text-align: center; }
-    .back a { color: #f00; }
+    header {
+      position: sticky;
+      top: 0;
+      background-color: #000;
+      padding: 20px 40px;
+      text-align: right;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    header a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: opacity 0.3s;
+    }
+    header a:hover {
+      opacity: 0.7;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h1 {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin-bottom: 40px;
+    }
+    .interview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+    .interview img {
+      width: 400px;
+      height: 523px;
+      object-fit: cover;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    .interview-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .interview-text h2 {
+      font-size: 26px;
+      margin-bottom: 25px;
+      color: #333;
+    }
+    .interview-text p {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .question {
+      font-weight: 600;
+      color: #444;
+      margin-top: 30px;
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      .interview {
+        flex-direction: column;
+        text-align: center;
+      }
+      .interview img {
+        margin: 0 auto 30px;
+        width: 100%;
+        height: auto;
+        max-width: 400px;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">MindPath Studio</div>
-    <nav>
-      <a href="index.html">首頁</a>
-      <a href="services.html">服務項目</a>
-      <a href="contact.html">聯絡我們</a>
-    </nav>
+    <a href="index.html">首頁</a>
+    <a href="about.html">關於我們</a>
+    <a href="services.html">服務項目</a>
+    <a href="contact.html">聯絡我們</a>
   </header>
-  <div class="content">
+  <div class="container">
     <h1>關於我們</h1>
-    <p>思路啟行工作室致力於協助香港品牌進軍中國內地市場，並提供各類數位行銷解決方案。我們專注於創意策略與在地推廣，打造獨特品牌形象，幫助客戶從內容製作到市場推廣全方位發力。</p>
-    <p>我們的團隊融合多年實戰經驗與創意思考，提供量身定制的策略，協助品牌在中港兩地市場中取得成功。</p>
-    <div class="back"><a href="index.html">返回首頁</a></div>
+    <div class="interview">
+      <img src="images/tommy.jpg" alt="創辦人湯國豪先生">
+      <div class="interview-text">
+        <h2>訪談對談 | 創辦人湯國豪先生（Tommy Tong）</h2>
+
+        <div class="question">Q：MindPath Studio 的成立背景是什麼？</div>
+        <p>MindPath Studio 成立於2025年，由市場策劃及媒體營運顧問湯國豪先生創立。多年服務本地及跨境品牌後，我們深刻體會到傳統行銷方式在數位轉型浪潮中已漸顯疲態，許多企業面對內容過剩、平台變化快、缺乏差異化策略等挑戰，無從突圍。MindPath Studio 正是為了回應這些市場痛點而誕生。</p>
+
+        <div class="question">Q：創辦人是如何看待當下的市場行銷環境？</div>
+        <p>湯國豪先生認為：「市場早已不再只是曝光與堆砌預算的比賽，而是要洞察人心、快速應變、內容為核。」他強調品牌要有『可行動的創意』與『數據支持的策略』才能在新媒體環境中脫穎而出。這也是 MindPath Studio 所堅持的核心理念。</p>
+
+        <div class="question">Q：MindPath Studio 在策略上有何不同？</div>
+        <p>我們主張“策略先於內容”，並強調「在地化視角 + 數據導向 + 整合創意」。從平台選擇、內容調性到推廣節奏，我們結合本地洞察與內地市場趨勢，量身打造品牌成長路徑。我們的服務不只限於代運營，更涵蓋品牌聲音重塑與用戶關係經營。</p>
+
+        <div class="question">Q：對未來有什麼展望？</div>
+        <p>MindPath Studio 致力於成為香港商家進軍內地市場的橋樑與策略夥伴。我們希望三年內協助超過100家本地企業完成數碼轉型，並建立一套實戰驗證的營運方法論，讓「策略即實踐」不再只是口號。湯先生亦表示：「我們希望不只是執行者，更是企業創新思維的引導者。」</p>
+
+        <div class="question">Q：創辦人個人的價值觀是什麼？</div>
+        <p>湯國豪先生始終相信：「敏銳比經驗重要，執行力比構想重要。」這種強調即時反應與精準落地的行事風格，已深深烙印在 MindPath Studio 的團隊文化中。我們堅持持續學習、挑戰框架、重新定義「有效內容」與「真實價值」的標準。</p>
+      </div>
+    </div>
   </div>
 </body>
 </html>
